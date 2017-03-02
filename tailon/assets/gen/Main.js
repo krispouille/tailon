@@ -29,7 +29,7 @@ var LogView = (function () {
             console.log('warn detected ...');
             class_names += ' log-warn';
         }
-        inner_html = inner_html.replace(/\[[^m]m/g, '');
+        inner_html = inner_html.replace(/\\e\[[^m]+m/g, '');
         span.innerHTML = inner_html;
         span.className = class_names;
         return span;
