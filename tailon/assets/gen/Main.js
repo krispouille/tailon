@@ -17,6 +17,16 @@ var LogView = (function () {
     };
     LogView.prototype.createSpan = function (inner_html, class_names) {
         var span = document.createElement('span');
+        if (/\[ERR\]/.test(inner_html)){
+        class_names += ' log-err';
+        }
+        else if (/\[INFO\]/.test(inner_html)){
+            class_names += ' log-info';
+        }
+        else if (/\[WARN\]/.test(inner_html)){
+            class_names += ' log-warn';
+        }
+        inner_html = inner_html.replace(/\\e\[[^m]m/g, '');
         span.innerHTML = inner_html;
         span.className = class_names;
         return span;
