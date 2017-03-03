@@ -26,6 +26,9 @@ var LogView = (function () {
         else if (/\[WARN\]/.test(inner_html)){
             class_names += ' log-warn';
         }
+        else if (/\[DEBUG\]/.test(inner_html)){
+            class_names += ' log-debug';
+        }
         inner_html = inner_html.replace(/\[\d+m/g, '');
         span.innerHTML = inner_html;
         span.className = class_names;
