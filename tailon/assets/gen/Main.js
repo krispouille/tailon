@@ -30,7 +30,7 @@ var LogView = (function () {
             class_names += ' log-debug';
         }
         inner_html = inner_html.replace(/\[\d+m/g, '');
-        inner_html = inner_html.replace(/(^\[[^\]]*\])[^\s]*(.*)$/gm, '$1 $2');
+        inner_html = inner_html.replace(/^(\[[^\]]*\])[^\s]*(.*)$/gm, '$1 $2');
         span.innerHTML = inner_html;
         span.className = class_names;
         return span;
